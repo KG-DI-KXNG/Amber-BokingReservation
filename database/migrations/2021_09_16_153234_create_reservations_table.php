@@ -14,8 +14,8 @@ class CreateReservationsTable extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('Guest_Details_ID')->constrained('guest_details');
+            $table->id('Reservation_ID');
+            $table->foreignId('Guest_Details_ID')->constrained('guest_details','Guest_Details_ID');
             $table->string('Reference_Num');
             $table->string('Confirmation_Code'); 
             $table->timestamps();

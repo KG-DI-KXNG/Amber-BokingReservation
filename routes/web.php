@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class, 'login']);
 
 
+Route::view('Admin', 'AdminPortal');

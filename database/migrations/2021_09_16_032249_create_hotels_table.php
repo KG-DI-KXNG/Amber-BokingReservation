@@ -14,8 +14,8 @@ class CreateHotelsTable extends Migration
     public function up()
     {
         Schema::create('hotels', function (Blueprint $table) {
-            $table->id(); //let these stay add between them
-            $table->string('Hotel_ID')->unique();
+            // $table->id('Hotel_ID'); //let these stay add between them
+           $table->bigIncrements('Hotel_ID');
             $table->string('Hotel_Name');
             $table->string('Hotel_Location')->default('Jamaica');
             $table->timestamps();

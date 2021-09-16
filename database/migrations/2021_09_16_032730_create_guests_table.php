@@ -14,8 +14,9 @@ class CreateGuestsTable extends Migration
     public function up()
     {
         Schema::create('guests', function (Blueprint $table) {
-            $table->id(); //let these stay add between them
-            $table->string('Guest_ID')->unique();
+            // $table->id('Guest_ID'); 
+            $table->bigIncrements('Guest_ID');
+            //$table->primary('Guest_ID');
             $table->string('FirstName');
             $table->string('LastName');
             $table->date('DOB');

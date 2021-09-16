@@ -17,7 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id('Payment_ID');
            //$table->string('Payment_ID')->unique();
             $table->string('Payment_Type');
-            $table->foreignId('Reservation_ID')->constrained('reservations','Reservation_ID');
+            $table->string('Reservation_ID',4);
             $table->timestamps();
         });
     }

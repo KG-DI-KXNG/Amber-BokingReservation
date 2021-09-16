@@ -7,18 +7,19 @@
 <body>
 
     <center><form id="regForm" action="">
+      @csrf
 
         <h1>Dolphin Cove</h1>
         
         <!-- One "tab" for each step in the form: -->
         <div class="tab">Full Name:
-          <p><input placeholder="First Nname"></p>
-          <p><input placeholder="Last Name"></p>
+          <p><input placeholder="First Name" name="first_name"></p>
+          <p><input placeholder="Last Name" name="last_name"></p>
         </div>
         
         <div class="tab">Contact Information:
-          <p><input placeholder="Email Address"></p>
-          <p><input placeholder="Phone Number"></p>
+          <p><input placeholder="Email Address" name="email" type=""></p>
+          <p><input placeholder="Phone Number" name="contact" type="number" class="appearance-none"></p>
         </div>
 
         <div class="tab">Programs:

@@ -14,9 +14,7 @@ class CreateProgramsTable extends Migration
     public function up()
     {
         Schema::create('programs', function (Blueprint $table) {
-            // $table->id('Program_ID'); 
-        //    $table->string('Program_ID')->primary();
-           // $table->primary('Program_ID');
+         
             $table->string('Program_Name');
             $table->foreignID('Program_ID')->constrained('rates','Rate_ID');
             $table->string('Status')->default('Available');

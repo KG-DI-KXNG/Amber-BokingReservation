@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('login', [LoginController::class, 'login']);
+Route::post('login', [LoginController::class, 'post_login']);
 
 
 Route::view('Admin', 'AdminPortal');

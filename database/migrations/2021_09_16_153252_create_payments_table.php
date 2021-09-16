@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGuestDetailsTable extends Migration
+class CreatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateGuestDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('guest_details', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->string('Payment_ID')->unique();
+            $table->string('Payment_Type');
+            $table->foreignId('Reservation_ID')->constrained('reservations');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateGuestDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guest_details');
+        Schema::dropIfExists('payments');
     }
 }

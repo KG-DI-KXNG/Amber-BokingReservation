@@ -15,6 +15,9 @@ class CreateHotelsTable extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id(); //let these stay add between them
+            $table->string('Hotel_ID')->unique();
+            $table->string('Hotel_Name');
+            $table->string('Hotel_Location')->default('Jamaica');
             $table->timestamps();
         });
     }

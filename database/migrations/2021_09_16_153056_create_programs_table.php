@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTourcompaniesTable extends Migration
+class CreateProgramsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTourcompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tourcompanies', function (Blueprint $table) {
+        Schema::create('programs', function (Blueprint $table) {
             $table->id(); //let these stay add between them
-            $table->string('Tour_ID')->unique();
-            $table->string('Tour_Com_Name');
+            $table->string('Program_ID')->unique();
+            $table->string('Program_Name');
+            $table->foreignID('Rate_ID')->constrained('rates','Rate_ID');
+            $table->string('Status')->default('Available');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTourcompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tourcompanies');
+        Schema::dropIfExists('programs');
     }
 }

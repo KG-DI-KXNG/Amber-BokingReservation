@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Guest extends Model
 {
     use HasFactory;
-
-    public $table = "Guest";
 }

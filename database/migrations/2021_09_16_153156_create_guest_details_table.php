@@ -17,7 +17,7 @@ class CreateGuestDetailsTable extends Migration
             $table->id('Guest_Details_ID');
             $table->foreignID('Guest_ID')->constrained('guests','Guest_ID');
             $table->foreignID('Hotel_ID')->constrained('hotels','Hotel_ID');
-            $table->foreignID('Tour_ID')->constrained('tourcompanies','Tour_ID1');
+            $table->foreignID('Tour_ID')->constrained('tourcompanies','Tour_ID');
             $table->foreignID('Program_ID')->constrained('programs','Program_ID');
             $table->integer('N_Adults');
             $table->integer('N_Child');

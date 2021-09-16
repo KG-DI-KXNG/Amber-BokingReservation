@@ -15,7 +15,7 @@ class CreateRatesTable extends Migration
     {
         Schema::create('rates', function (Blueprint $table) {
             // $table->id('Rate_ID'); //let these stay add between them
-            $table->string('rate_id')->primary();
+            $table->bigIncrements('rate_id');
             $table->string('Guest_Type');
             $table->decimal('Rate');
             $table->timestamps();

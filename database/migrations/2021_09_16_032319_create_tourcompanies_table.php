@@ -15,7 +15,7 @@ class CreateTourcompaniesTable extends Migration
     {
         Schema::create('tourcompanies', function (Blueprint $table) {
             // $table->id('Tour_ID');
-           $table->string('Tour_ID')->primary();
+           $table->bigIncrements('Tour_ID');
            // $table->primary('Tour_ID');
             $table->string('Tour_Com_Name');
             $table->timestamps();

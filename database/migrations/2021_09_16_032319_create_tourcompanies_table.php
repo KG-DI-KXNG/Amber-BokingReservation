@@ -14,9 +14,9 @@ class CreateTourcompaniesTable extends Migration
     public function up()
     {
         Schema::create('tourcompanies', function (Blueprint $table) {
-            // $table->id();
-            $table->string('Tour_ID');
-            $table->primary('Tour_ID');
+            $table->id('Tour_ID');
+           // $table->string('Tour_ID');
+           // $table->primary('Tour_ID');
             $table->string('Tour_Com_Name');
             $table->timestamps();
         });

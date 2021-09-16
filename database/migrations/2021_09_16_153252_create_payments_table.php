@@ -14,10 +14,10 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
-            $table->string('Payment_ID')->unique();
+            $table->id('Payment_ID');
+           //$table->string('Payment_ID')->unique();
             $table->string('Payment_Type');
-            $table->foreignId('Reservation_ID')->constrained('reservations');
+            $table->foreignId('Reservation_ID')->constrained('reservations','Reservation_ID');
             $table->timestamps();
         });
     }

@@ -53,7 +53,7 @@
 
         <!-- Image Section -->
         <div class="w-1/2 shadow-2xl">
-            <img class="object-cover w-full h-screen hidden md:block" src="https://unsplash.com/photos/jOzV-R9rRa8">
+            <img class="object-cover w-full h-screen hidden md:block" src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" >
         </div>
     </div>
 

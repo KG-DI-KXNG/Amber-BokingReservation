@@ -169,7 +169,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{{ url('admin-profile') }}">Reservations</a>
-        <a href="{{ url('admin-pay') }}">Payments</a>
+        <a href="#">Payments</a>
         <a href="#">Logout</a>
     </div>
 

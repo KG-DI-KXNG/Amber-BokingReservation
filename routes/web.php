@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class, 'login']);
 Route::post('login', [LoginController::class, 'post_login']);
 
-
+Route::view('contact', 'contact');
+Route::view('pricing', 'pricing');
+Route::view('destination', 'destination');
+Route::view('destination/{program}')
 Route::view('Admin', 'AdminPortal');

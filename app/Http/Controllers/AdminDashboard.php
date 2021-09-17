@@ -47,8 +47,8 @@ class AdminDashboard extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name'=>'required|min:5',
-            'last_name'=>'required|min:5',
+            'first_name'=>'required',
+            'last_name'=>'required',
             'dob'=>'required',
             'adult'=>'min:1|max:20|numeric',
             'child'=>'max:20|numeric',

@@ -11,6 +11,7 @@ class Welcome extends Controller
 {
     function index(){
         $tour = tourcompany::all();
+        // dd($tour);
         $program = program::all();
         $hotel = hotel::all();
         return view('welcome')->with(['tour'=>$tour, 'program'=>$program, 'hotel'=>$hotel]);

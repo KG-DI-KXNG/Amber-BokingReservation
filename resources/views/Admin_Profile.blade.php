@@ -168,7 +168,7 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url('admin-profile') }}">Reservations</a>
+        <a href="{{ url('dashboard') }}">Reservations</a>
         <a href="{{ url('admin-pay') }}">Payments</a>
         <a href="#">Logout</a>
     </div>
@@ -183,13 +183,8 @@
                     <thead>
                         <tr>
                             <th>Guest ID</th>
-<<<<<<< HEAD
-                            <th>Guest Name</th>
-                            <th>Age</th>
-=======
                             <th>Guest First Name</th>
                             <th>Guest Last Name</th>
->>>>>>> aa24dacdb9472e3732458d515fa8a73d43d26f47
                             <th>Program</th>
                             <th>Hotel</th>
                             <th>Tour Company</th>

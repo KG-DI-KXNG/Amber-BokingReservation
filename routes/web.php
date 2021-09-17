@@ -29,4 +29,9 @@ Route::view('admin', 'AdminPortal');
 Route::view('admin-profile', 'Admin_profile');
 Route::view('admin-pay', 'admin_payments');
 Route::view('admindash', 'admindash');
+<<<<<<< HEAD
 Route::resource('dashboard', [AdminDashboard::class]);
+=======
+
+Route::resource('dashboard', AdminDashboard::class);
+>>>>>>> 2c2a4ad60958ba038677c9576d20e22d077f4931

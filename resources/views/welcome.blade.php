@@ -82,7 +82,7 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form action="/travel" method="post">
+											<form action="/dashboard" method="post">
 												@csrf
 												<div class="row form-group">
 													<div class="col-md-6">

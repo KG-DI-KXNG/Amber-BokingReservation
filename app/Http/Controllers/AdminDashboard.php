@@ -66,6 +66,38 @@ class AdminDashboard extends Controller
         $dob =  date_create($request->dob);
 
 
+        $guest_check = GuestDetail::where('First_name', $request->first_name)
+            ->where('Last_name', $request->last_name)
+            ->where('Reservation_Date', $date)
+            ->where('Booking_Date', now()->toDateString())
+            ->count();
+
+            // dd($guest_check);
+        if ($guest_check != 0){
+            if ($request->child != 0){
+                GuestDetail::where('First_name', $request->first_name)
+                ->where('Last_name', $request->last_name)
+                 ->where('Reservation_Date', $date)
+                ->where('Booking_Date', now()->toDateString())
+                 ->increment('N_Adults', $request->adult);
+                
+
+                GuestDetail::where('First_name', $request->first_name)
+                ->where('Last_name', $request->last_name)
+                ->where('Reservation_Date', $date)
+                ->where('Booking_Date', now()->toDateString())
+                ->increment('N_Child', $request->child);
+
+                // DB::table('guest_details')->increment('N_Child', $request->child, ['First_name' => $request->first_name, 'Last_name'=>$request->last_name,'Reservation_Date'=>$date]);
+            }else{
+                GuestDetail::where('First_name', $request->first_name)
+            ->where('Last_name', $request->last_name)
+            ->where('Reservation_Date', $date)
+            ->where('Booking_Date', now()->toDateString())
+            ->increment('N_Adults', $request->adult );
+            }        
+        }else{
+            
         $guest = new GuestDetail();
         $guest->First_name = $request->first_name;
         $guest->Last_name = $request->last_name;
@@ -80,6 +112,7 @@ class AdminDashboard extends Controller
         $guest->Credit = $credit;
 
         $guest->save();
+        }
 
         $guest_count = Guest::where('FirstName', $request->first_name)->where('LastName',$request->last_name)->count();
         $guest_unique_id = "AB1";

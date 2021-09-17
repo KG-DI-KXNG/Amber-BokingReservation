@@ -15,10 +15,11 @@ class CreateGuestDetailsTable extends Migration
     {
         Schema::create('guest_details', function (Blueprint $table) {
             $table->id('Guest_Details_ID');
-            $table->string('Guest_ID',4);
-            $table->string('Hotel_ID',4);
-            $table->string('Tour_ID',4);
-            $table->string('Program_ID',4);
+            $table->string('First_name');
+            $table->string('Last_name');
+            $table->string('Hotel Name');
+            $table->string('Tour Company');
+            $table->string('Program ID');
             $table->integer('N_Adults');
             $table->integer('N_Child');
             $table->date('Reservation_Date');

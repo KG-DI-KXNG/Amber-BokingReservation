@@ -86,7 +86,7 @@ class AdminDashboard extends Controller
         $i = 1;
 
         if ($guest_count == 0){
-            while (Guest::where('Guest',$guest_unique_id)->count() == 1){
+            while (Guest::where('Guest_ID',$guest_unique_id)->count() == 1){
                 $guest_unique_id = "AB".$i++;
             }
 

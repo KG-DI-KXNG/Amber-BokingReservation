@@ -27,4 +27,5 @@ Route::view('destination', 'destination');
 Route::view('destination/{program}', 'destination');
 Route::view('admin', 'AdminPortal');
 Route::view('admin-profile', 'Admin_profile');
+Route::view('admin-pay', 'admin_payments');
 Route::view('admindash', 'admindash');

@@ -272,8 +272,11 @@
 
 
 	var dateForm = function() {
-		$('#date-start').datepicker();
+		$('#date-start').datepicker({startDate: '1d',endDate: '+2m'});
+		$('#dob').datepicker({startDate: '-70y',endDate: '-12y'});
+
 	};
+	
 
 	var parallax = function() {
 		$(window).stellar({

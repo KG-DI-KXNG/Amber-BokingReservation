@@ -1,14 +1,10 @@
 <!DOCTYPE HTML>
-<!--
-	Traveler by freehtml5.co
-	Twitter: http://twitter.com/fh5co
-	URL: http://freehtml5.co
--->
+
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Traveler &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
+	<title>Dolphin Cove</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -49,6 +45,8 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -74,42 +72,65 @@
 					
 
 					<div class="row row-mt-15em">
-						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+						<div class="col-md-6 mt-text animate-box" data-animate-effect="fadeInUp">
 							<h1>Planing Trip To Anywhere in The World?</h1>	
 						</div>
-						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+						<div class="col-md-6 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
 								<div class="tab">
 									
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form action="#">
+											<form action="/travel" method="post">
+												@csrf
 												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="fullname">Your Name</label>
-														<input type="text" id="fullname" class="form-control">
+													<div class="col-md-6">
+														<label for="fullname">First Name</label>
+														<input type="text" id="first_name" name='first_name' class="form-control">
 													</div>
+													<div class="col-md-6">
+														<label for="fullname">Last Name</label>
+														<input type="text" id="last_name" name='last_name' class="form-control">
+													</div>
+													
+														<div class="col-md-4">
+															<label for="dob">Date of Birth</label>
+															<input type="text" id="dob" name='dob' class="form-control">
+														</div>
+														<div class="col-md-4">
+															<label for="adult">Adult</label>
+															<input type="number" id="adult" value='1' min='1' class="form-control">
+														</div>
+														<div class="col-md-4">
+															<label for="child">Children</label>
+															<input type="number" id="child" value='0' class="form-control">
+														</div>
+													
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="activities">Activities</label>
-														<select name="#" id="activities" class="form-control">
-															<option value="">Activities</option>
-															<option value="">Hiking</option>
-															<option value="">Caving</option>
-															<option value="">Swimming</option>
+														<label for="activities">Programmes</label>
+														<select name="activities" id="activities" class="form-control">
+															@forelse ($program as $p)
+																<option value="{{$p->Program_ID}}">{{$p->Program_Name}}</option>
+															@empty
+																<option>--No Activity--</option>
+															@endforelse
+															
+															
 														</select>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="destination">Destination</label>
-														<select name="#" id="destination" class="form-control">
-															<option value="">Philippines</option>
-															<option value="">USA</option>
-															<option value="">Australia</option>
-															<option value="">Singapore</option>
+														<label for="destination">Tour</label>
+														<select name="destination" id="destination" class="form-control">
+															@forelse ($tour as $t)
+																<option value="{{$t->Tour_ID}}">{{$t->Tour_Com_Name}}</option>
+															@empty
+																<option>--No Tours--</option>
+															@endforelse
 														</select>
 													</div>
 												</div>
@@ -117,7 +138,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input type="text" id="date-start" class="form-control">
+														<input type="text" id="date-start" name='date_travel' class="form-control">
 													</div>
 												</div>
 
@@ -144,19 +165,19 @@
 	
 	<div class="gtco-section">
 		<div class="gtco-container">
-			<div class="row">
+			<div class="row" style="display:flex flex-wrap:wrap">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Most Popular Programmes</h2>
 					<p>Down below you will see a few of our most visited Programmes by you, our valid customers.</p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="container flex flex-wrap" >
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6" style="height: 20px;">
 					<a href="images/dem.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-							<img src="{{ asset('images/dem.jpg') }}" alt="Image" class="img-responsive">
+							<img src="images/dem.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Encounter Memories</h2>
@@ -165,15 +186,15 @@
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6" style="height: 20px;">
 					<a href="images/dwam.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-							<img src="{{ asset('images/dwam.jpg') }}" alt="Image" class="img-responsive">
+							<img src="images/dwam.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Swim Adventure Memories</h2>
-							<p>With this packages you can interact with the dolphins while swimming in the deep. Enjoy a kiss, try a dance, perhaps you will get a splash. or two and have a real up close experience.</p>
+							<p>With this packages you can interact with the dolphins while swimming in the deep. Enjoy a kiss, try a dance, perhaps you will get a splash or two and have a real up close experience.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>
@@ -182,7 +203,7 @@
 					<a href="images/drs.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-							<img src="{{ asset('images/drs.jpg') }}" alt="Image" class="img-responsive">
+							<img src="images/drs.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Royal Swim Memories</h2>
@@ -197,7 +218,7 @@
 					<a href="images/yasd.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-							<img src="{{ asset('images/yasd.jpg') }}" alt="Image" class="img-responsive">
+							<img src="images/yasd.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Swim Adventure</h2>
@@ -207,24 +228,25 @@
 					</a>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6" style="height: 20px;">
 					<a href="images/yasd.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-							<img src="{{ asset('images/se.jpg') }}" alt="Image" class="img-responsive">
+							<img src="images/se.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Shark Encounter</h2>
 							<p>You get a rare opportunity to meet the most fascinating and fearsome of all sea creatures the shark. Guests get the chance to hold, touch, feed and explore by swimming in the same water as these sharks.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
+					</a>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6" >
 					<a href="images/dsa.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-						 <img src="{{ asset('images/dsa.jpg') }}" alt="Image" class="img-responsive">
+						 <img src="images/dsa.jpg" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Royal Swim</h2>
@@ -334,10 +356,7 @@
 
 			<div class="row copyright">
 				<div class="col-md-12">
-					<p class="pull-left">
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
-					</p>
+					
 					<p class="pull-right">
 						<ul class="gtco-social-icons pull-right">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>

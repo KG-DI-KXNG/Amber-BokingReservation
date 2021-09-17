@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Welcome;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Welcome::class, 'index']);
 
 Route::get('login', [LoginController::class, 'login']);
 Route::post('login', [LoginController::class, 'post_login']);
@@ -28,3 +28,5 @@ Route::view('destination/{program}', 'destination');
 Route::view('Admin', 'AdminPortal');
 Route::view('Admin-Profile', 'Admin_profile');
 Route::view('admindash', 'admindash');
+
+Route::resource('dashboard', [AdminDashboard::class]);

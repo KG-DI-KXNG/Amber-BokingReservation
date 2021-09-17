@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
+use App\Models\GuestDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminDashboard extends Controller
 {
@@ -13,7 +16,11 @@ class AdminDashboard extends Controller
      */
     public function index()
     {
-        return view('Admin_Profile');
+        if (session()->has('admin')){
+            return $this->create();
+        }
+        return \redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
+        
     }
 
     /**
@@ -23,7 +30,12 @@ class AdminDashboard extends Controller
      */
     public function create()
     {
-        //
+        $guest = DB::table('guest_details')
+        ->join('programs', 'programs.Program_ID', '=', 'guest_details.Program ID')
+        ->select()
+        ->get();
+                                    
+        return view('admin_profile',['guest'=>$guest]);
     }
 
     /**
@@ -34,7 +46,60 @@ class AdminDashboard extends Controller
      */
     public function store(Request $request)
     {
-        echo "yes";
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'dob'=>'required',
+            'adult'=>'min:1|max:20|numeric',
+            'child'=>'max:20|numeric',
+            'activities'=>'required',
+            'destination'=>'required',
+            'date_travel'=>'required',
+        ]);
+        $walk_in = 0;
+        $credit = 1;
+        if ($request->destination == "WI"){
+            $walk_in = 1;
+            $credit = 0;
+        }
+        $date = \date_create($request->date_travel);
+        $dob =  date_create($request->dob);
+
+
+        $guest = new GuestDetail();
+        $guest->First_name = $request->first_name;
+        $guest->Last_name = $request->last_name;
+        $guest->N_Adults = $request->adult;
+        $guest->N_Child = $request->child;
+        $guest->{'Program ID'} = $request->activities;
+        $guest->{'Hotel Name'} = $request->hotel;
+        $guest->{'Tour Company'} = $request->destination;
+        $guest->Reservation_Date = $date;
+        $guest->Booking_Date = \now();
+        $guest->Walkings = $walk_in;
+        $guest->Credit = $credit;
+
+        $guest->save();
+
+        $guest_count = Guest::where('FirstName', $request->first_name)->where('LastName',$request->last_name)->count();
+        $guest_unique_id = "AB1";
+        $i = 1;
+
+        if ($guest_count == 0){
+            while (Guest::where('Guest_ID',$guest_unique_id)->count() == 1){
+                $guest_unique_id = "AB".$i++;
+            }
+
+            $g = new Guest();
+            $g->Guest_ID = $guest_unique_id;
+            $g->FirstName = $request->first_name;
+            $g->LastName = $request->last_name;
+            $g->DOB = $dob;
+            $g->save();
+        }
+        return redirect('/')->withSuccess('Successfully Booked! Enjoy your trip '.$request->first_name.' '.$request->last_name);
+
+      
     }
 
     /**

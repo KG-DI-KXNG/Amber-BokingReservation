@@ -25,6 +25,7 @@
                             </li>
                             <li class="active"><a href="/pricing">Pricing</a></li>
                             <li><a href="/contact">Contact</a></li>
+                            <li><a href="/login">Login</a></li>
                         </ul>	
                     </div>
                 </div>

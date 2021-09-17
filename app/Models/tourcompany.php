@@ -12,4 +12,6 @@ class tourcompany extends Model
     public $table = "tourcompanies";
     public $primaryKey = "Tour_ID";
     public $timestamps = false;
+    protected $keyType = 'string';
+    public $incrementing = false;
 }

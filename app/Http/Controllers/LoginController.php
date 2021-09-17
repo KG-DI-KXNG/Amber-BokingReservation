@@ -24,8 +24,8 @@ class LoginController extends Controller
 
         if($email ==="admin@domain.com" && $password ==="admin123"){
             $request->session()->regenerate();
-
-            return redirect()->intended('admin-profile');
+            session()->put('admin',true);
+            return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([

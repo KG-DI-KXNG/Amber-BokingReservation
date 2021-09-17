@@ -16,6 +16,11 @@
         .font-family-karla {
             font-family: karla;
         }
+        .logo{
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
     </style>
 </head>
 <body class="bg-white font-family-karla h-screen">
@@ -26,7 +31,7 @@
         <div class="w-full md:w-1/2 flex flex-col">
 
             <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="#" class="bg-black text-white font-bold text-xl p-4">Logo</a>
+                <a href="#"><img class='logo' src="https://scontent.fktp2-1.fna.fbcdn.net/v/t1.6435-9/138282373_1310206406021293_669057774720678789_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=174925&_nc_ohc=OVomVy0fs3kAX8E-CNW&_nc_ht=scontent.fktp2-1.fna&oh=e88d83367b958708d2ea5438ba5ed6d3&oe=616691FC"></a>
             </div>
 
             <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">

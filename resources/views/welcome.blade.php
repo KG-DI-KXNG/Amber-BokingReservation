@@ -32,6 +32,9 @@
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 
+	<!-- Bootstrap Icon -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
 
@@ -62,9 +65,15 @@
 	<div id="page">
 
 	
-<x-header />
+
+
+
+
+
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_2.jpg)">
+<x-header />
+
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('https://images.unsplash.com/photo-1607153333879-c174d265f1d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row">
@@ -81,6 +90,25 @@
 									
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
+											@if(count($errors) > 0 )
+												<div class="alert alert-danger">
+													@if(count($errors) == 1)
+													<i class="fas fa-times-circle"></i> {{$errors->first()}}
+													@else
+													<i class="fas fa-times-circle"></i> @lang('errors.multiple')
+													<ul>
+													@foreach ($errors->all() as $error)
+													<li>{{ $error }}</li>
+													@endforeach
+												</ul>
+												@endif
+												</div>
+												@endif
+											@if (Session::has('success'))
+												<div class="alert alert-success">
+													<i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+												</div>
+												@endif
 											<h3>Book Your Trip</h3>
 											<form action="/dashboard" method="post">
 												@csrf
@@ -100,11 +128,12 @@
 														</div>
 														<div class="col-md-4">
 															<label for="adult">Adult</label>
-															<input type="number" id="adult" value='1' min='1' class="form-control">
+															<input type="number" id="adult"name="adult" value='1' min='1' class="form-control">
 														</div>
 														<div class="col-md-4">
 															<label for="child">Children</label>
-															<input type="number" id="child" value='0' class="form-control">
+															<input type="number" id="child"name='child'
+															value='0' class="form-control">
 														</div>
 													
 												</div>
@@ -130,6 +159,19 @@
 																<option value="{{$t->Tour_ID}}">{{$t->Tour_Com_Name}}</option>
 															@empty
 																<option>--No Tours--</option>
+															@endforelse
+														</select>
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="hotel">Hotel</label>
+														<select name="hotel" id="hotel" class="form-control">
+															<option selected> </option>
+															@forelse ($hotel as $h)
+																<option value="{{$h->Hotel_Name}}">{{$h->Hotel_Name}}</option>
+															@empty
+																<option>--No Hotel--</option>
 															@endforelse
 														</select>
 													</div>

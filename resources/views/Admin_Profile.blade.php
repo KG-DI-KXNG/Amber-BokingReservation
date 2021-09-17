@@ -183,7 +183,8 @@
                     <thead>
                         <tr>
                             <th>Guest ID</th>
-                            <th>Guest Name</th>
+                            <th>Guest First Name</th>
+                            <th>Guest Last Name</th>
                             <th>Program</th>
                             <th>Tour Company</th>
                             <th> No of Adult(s)</th>
@@ -197,16 +198,20 @@
             <div class="tbl-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tbody>
+                        @foreach ($guest as $g)
                         <tr>
-                            <td>AAC</td>
-                            <td>AUSTRALIAN COMPANY </td>
-                            <td>$1.38</td>
-                            <td>+2.01</td>
-                            <td>-0.36%</td>
-                            <td>xxx</td>
-                            <td>xxxxx</td>
-                            <td>xxxxx</td>
+                            <td>{{$g->Guest_Details_ID}}</td>
+                            <td>{{$g->First_name}} </td>
+                            <td>{{$g->Last_name}}</td>
+                            <td>{{$g->Program_Name}}</td>
+                            <td>{{ $g->{"Tour Company"} }}</td>
+                            <td>{{$g->N_Adults}}</td>
+                            <td>{{$g->N_Child}}</td>
+                            <td>{{$g->Reservation_Date}}</td>
+                            <td>{{$g->Booking_Date}}</td>
                         </tr>
+                        @endforeach
+                       
                     </tbody>
                 </table>
             </div>

@@ -25,8 +25,7 @@ Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
 Route::view('destination', 'destination');
 Route::view('destination/{program}', 'destination');
-Route::view('admin', 'AdminPortal');
-Route::view('admin-profile', 'Admin_profile');
+Route::view('Admin', 'AdminPortal');
 Route::view('admin-pay', 'admin_payments');
 Route::view('admindash', 'admindash');
 

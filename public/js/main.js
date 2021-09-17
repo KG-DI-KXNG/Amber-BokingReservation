@@ -335,7 +335,14 @@
         }));
       });
 
-
+	  
+	  function alert_error(){
+		  
+		  let error = document.getElementById('error');
+		  if(error.innerHTML != null || error.innerHTML != ""){
+			  alertify.alert('Whoops! Something went wrong..', error.innerHTML);
+		  }
+	  }
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -350,6 +357,7 @@
 		counterWayPoint();
 		dateForm();
 		parallax();
+		alert_error();
 	});
 
 

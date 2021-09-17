@@ -201,18 +201,6 @@
                     <tbody>
                         @foreach ($guest as $g)
                         <tr>
-<<<<<<< HEAD
-                            <td>AAC</td>
-                            <td>AUSTRALIAN COMPANY </td>
-                            <td>age</td>
-                            <td>xxxxxx</td>
-                            <td>$1.38</td>
-                            <td>+2.01</td>
-                            <td>-0.36%</td>
-                            <td>xxx</td>
-                            <td>xxxxx</td>
-                            <td>xxxxx</td>
-=======
                             <td>{{$g->Guest_Details_ID}}</td>
                             <td>{{$g->First_name}} </td>
                             <td>{{$g->Last_name}}</td>
@@ -222,7 +210,6 @@
                             <td>{{$g->N_Child}}</td>
                             <td>{{$g->Reservation_Date}}</td>
                             <td>{{$g->Booking_Date}}</td>
->>>>>>> aa24dacdb9472e3732458d515fa8a73d43d26f47
                         </tr>
                         @endforeach
                        

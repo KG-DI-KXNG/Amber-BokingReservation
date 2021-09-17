@@ -34,7 +34,7 @@ class AdminDashboard extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "yes";
     }
 
     /**

@@ -184,7 +184,9 @@
                         <tr>
                             <th>Guest ID</th>
                             <th>Guest Name</th>
+                            <th>Age</th>
                             <th>Program</th>
+                            <th>Hotel</th>
                             <th>Tour Company</th>
                             <th> No of Adult(s)</th>
                             <th>No of Child(ren)</th>
@@ -200,6 +202,8 @@
                         <tr>
                             <td>AAC</td>
                             <td>AUSTRALIAN COMPANY </td>
+                            <td>age</td>
+                            <td>xxxxxx</td>
                             <td>$1.38</td>
                             <td>+2.01</td>
                             <td>-0.36%</td>

@@ -186,8 +186,8 @@
                             <th>Guest Name</th>
                             <th>Program</th>
                             <th>Tour Company</th>
-                            <th> No of Adult(s)</th>
-                            <th>No of Child(ren)</th>
+                            <th>Rate</th>
+                            <th>Payment</th>
                             <th>Reservation Date</th>
                             <th>Booking Date</th>
                         </tr>

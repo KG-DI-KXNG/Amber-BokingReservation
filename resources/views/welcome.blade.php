@@ -146,90 +146,89 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Most Popular Destination</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Most Popular Programmes</h2>
+					<p>Down below you will see a few of our most visited Programmes by you, our valid customers.</p>
 				</div>
 			</div>
 			<div class="row">
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_1.jpg" class="fh5co-card-item image-popup">
+					<a href="images/dem.jpg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_1.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class=""></i></div>
+							<img src="{{ asset('images/dem.jpg') }}" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>New York, USA</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							<h2>Dolphin Encounter Memories</h2>
+							<p>With this packages you can interact with the dolphins while swimming in the deep. Enjoy a kiss, try a dance, perhaps you will get a splash or two and have a real up close experience.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_2.jpg" class="fh5co-card-item image-popup">
+					<a href="images/dwam.jpg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_2.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class=""></i></div>
+							<img src="{{ asset('images/dwam.jpg') }}" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Seoul, South Korea</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							<h2>Dolphin Swim Adventure Memories</h2>
+							<p>With this packages you can interact with the dolphins while swimming in the deep. Enjoy a kiss, try a dance, perhaps you will get a splash. or two and have a real up close experience.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_3.jpg" class="fh5co-card-item image-popup">
+					<a href="images/drs.jpg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_3.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class=""></i></div>
+							<img src="{{ asset('images/drs.jpg') }}" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Paris, France</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-							<p><span class="btn btn-primary">Schedule a Trip</span></p>
-						</div>
-					</a>
-				</div>
-
-
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_4.jpg" class="fh5co-card-item image-popup">
-						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_4.jpg" alt="Image" class="img-responsive">
-						</figure>
-						<div class="fh5co-text">
-							<h2>Sydney, Australia</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							<h2>Dolphin Royal Swim Memories</h2>
+							<p>You participate in a brief presentation after which, you enter the world of these amazing creatures. Swim with two dolphins as they interact with you in our beautiful cove.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>
 				</div>
 
+
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_5.jpg" class="fh5co-card-item image-popup">
+					<a href="images/yasd.jpg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_5.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class=""></i></div>
+							<img src="{{ asset('images/yasd.jpg') }}" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Greece, Europe</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							<h2>Dolphin Swim Adventure</h2>
+							<p>You will be surprised by the speed and agility of your new Dolphin friend as you ride on his belly or through the water on a boogie board. Learn fun facts about this species and about its ecosystem. It will be an incredible adventure!</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
-					<a href="images/img_6.jpg" class="fh5co-card-item image-popup">
+					<a href="images/yasd.jpg" class="fh5co-card-item image-popup">
 						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
-							<img src="images/img_6.jpg" alt="Image" class="img-responsive">
+							<div class="overlay"><i class=""></i></div>
+							<img src="{{ asset('images/se.jpg') }}" alt="Image" class="img-responsive">
 						</figure>
 						<div class="fh5co-text">
-							<h2>Spain, Europe</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
+							<h2>Shark Encounter</h2>
+							<p>You get a rare opportunity to meet the most fascinating and fearsome of all sea creatures the shark. Guests get the chance to hold, touch, feed and explore by swimming in the same water as these sharks.</p>
+							<p><span class="btn btn-primary">Schedule a Trip</span></p>
+						</div>
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="images/dsa.jpg" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"><i class=""></i></div>
+						 <img src="{{ asset('images/dsa.jpg') }}" alt="Image" class="img-responsive">
+						</figure>
+						<div class="fh5co-text">
+							<h2>Dolphin Royal Swim</h2>
+							<p>Swim with two dolphins as they interact with you in our beautiful Jamaican Cove. Can you name a better way to celebrate your Jamaican vacation than at Dolphin Cove in Ocho Rios?</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>

@@ -150,9 +150,9 @@
 					<p>Down below you will see a few of our most visited Programmes by you, our valid customers.</p>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row d-flex">
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6 flex-fill">
 					<a href="images/dem.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
@@ -191,9 +191,10 @@
 						</div>
 					</a>
 				</div>
-
-
-				<div class="col-lg-4 col-md-4 col-sm-6">
+			</div>
+			<div class="row">
+				
+			<div class="col-lg-4 col-md-4 col-sm-6">
 					<a href="images/yasd.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
@@ -218,13 +219,15 @@
 							<p>You get a rare opportunity to meet the most fascinating and fearsome of all sea creatures the shark. Guests get the chance to hold, touch, feed and explore by swimming in the same water as these sharks.</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
+					</a>
 				</div>
+
 
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<a href="images/dsa.jpg" class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"><i class=""></i></div>
-						 <img src="{{ asset('images/dsa.jpg') }}" alt="Image" class="img-responsive">
+							<img src="{{ asset('images/dsa.jpg') }}" alt="Image" class="img-responsive"/>
 						</figure>
 						<div class="fh5co-text">
 							<h2>Dolphin Royal Swim</h2>

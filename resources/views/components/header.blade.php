@@ -1,4 +1,3 @@
-	<!-- <div class="page-inner"> -->
         <nav class="gtco-nav" role="navigation">
             <div class="gtco-container">
                 

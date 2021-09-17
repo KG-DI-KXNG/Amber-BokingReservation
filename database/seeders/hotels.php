@@ -13,7 +13,6 @@ class Hotels extends Seeder
      */
     public function run()
     {
-        //
         \App\Models\hotel::truncate();
         \App\Models\hotel::create(['Hotel_ID' => 'GBPJ', 'Hotel_Name' => 'Gran Bahia Principe Jamaica Hotel', 'Hotel_Location'=>'Montego Bay']);
 

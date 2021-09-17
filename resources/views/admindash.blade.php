@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin Cove-Login</title>
+    <meta name="author" content="David Grzyb">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
+    </style>
+</head>
+<body>
 <!-- component -->
 <div class="h-screen w-full flex overflow-hidden">
 	<nav class="flex flex-col bg-gray-200 dark:bg-gray-900 w-64 px-12 pt-4 pb-6">
@@ -693,3 +707,5 @@
 	</main>
 
 </div>
+</body>
+</html>

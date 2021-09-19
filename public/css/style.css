@@ -1923,3 +1923,15 @@ form label {
     margin-bottom: 0.5rem !important;
   }
 }
+
+  .ajs-content{
+   color: #f54c53;
+  }
+
+  .ajs-button{
+    
+    border-radius: 10px;
+    font-weight: bolder;
+    color:white;
+    background-color: red;
+  }

@@ -61,6 +61,14 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
 	</head>
 	<body>
 		
@@ -84,18 +92,35 @@
 				<div class="col-md-12 col-md-offset-0 text-left">
 					
 
-					<div class="row row-mt-15em">
+
+
+
+					{{-- <div class="alertify  ajs-movable ajs-closable ajs-pinnable ajs-pulse"><div class="ajs-dimmer"></div><div class="ajs-modal" tabindex="0"><div class="ajs-dialog" tabindex="0"><button class="ajs-reset"></button><div class="ajs-commands"><button class="ajs-pin"></button><button class="ajs-maximize"></button><button class="ajs-close"></button></div><div class="ajs-header">Whoops! Something went wrong..</div><div class="ajs-body"><div class="ajs-content">
+						<i class="fas fa-times-circle"></i> errors.multiple													<ul>
+						<li>The first name field is required.</li>
+						<li>The last name field is required.</li>
+						<li>The dob field is required.</li>
+						<li>The date travel field is required.</li>
+					</ul>
+				</div></div><div class="ajs-footer"><div class="ajs-auxiliary ajs-buttons"></div><div class="ajs-primary ajs-buttons"><button class="ajs-button ajs-ok">OK</button></div></div><div class="ajs-handle"></div><button class="ajs-reset"></button></div></div></div> --}}
+
+
+
+
+				
+					<div class="row row-mt-15em" >
 						<div class="col-md-6 mt-text animate-box" data-animate-effect="fadeInUp">
 							<h1>Planing Trip To Anywhere in The World?</h1>	
 						</div>
-						<div class="col-md-6 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+						<div class="col-md-6 col-md-push-1 animate-box" style="margin-top: -80px;" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
 								<div class="tab">
 									
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											@if(count($errors) > 0 )
-												<div class="alert alert-danger">
+											<div class="hidden" >
+												@if(count($errors) > 0 )
+												<div class="alert alert-danger" id='error'>
 													@if(count($errors) == 1)
 													<i class="fas fa-times-circle"></i> {{$errors->first()}}
 													@else
@@ -108,6 +133,8 @@
 												@endif
 												</div>
 												@endif
+											</div>
+											
 											@if (Session::has('success'))
 												<div class="alert alert-success">
 													<i class="fas fa-check-circle"></i> {{ Session::get('success') }}

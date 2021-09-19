@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guest;
+use App\Models\Reservation;
 use App\Models\GuestDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -117,6 +118,7 @@ class AdminDashboard extends Controller
         $guest_count = Guest::where('FirstName', $request->first_name)->where('LastName',$request->last_name)->count();
         $guest_unique_id = "AB1";
         $i = 1;
+        
 
         if ($guest_count == 0){
             while (Guest::where('Guest_ID',$guest_unique_id)->count() == 1){
@@ -129,11 +131,33 @@ class AdminDashboard extends Controller
             $g->LastName = $request->last_name;
             $g->DOB = $dob;
             $g->save();
-        }
-        return redirect('/')->withSuccess('Successfully Booked! Enjoy your trip '.$request->first_name.' '.$request->last_name);
 
-      
-    }
+            
+        }
+
+        $reservation_id = "RES#1";
+        $ref_num = "REF#1";
+        $i = 1;
+
+        $reserve_count=Reservation::all()->count();
+
+        if ($reserve_count >= 0) {
+            while (Reservation::where('Confirmation_Code', $reservation_id)->where("Reference_Num", $ref_num)->count() == 1) {
+                $reservation_id = "RES#". $i++;
+                $ref_num = "REF#". $i++;
+            }
+
+                $reserve = new Reservation();
+                $reserve->Confirmation_Code = $reservation_id;
+                $reserve->Guest_Details_ID = $guest_unique_id;
+                $reserve->Reference_Num = $ref_num;
+                $reserve->save();
+            
+        }
+
+        return redirect('/')->withSuccess('Successfully Booked! Enjoy your trip '.$request->first_name.' '.$request->last_name);
+        }
+    
 
     /**
      * Display the specified resource.

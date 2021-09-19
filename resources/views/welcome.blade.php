@@ -158,6 +158,7 @@
 													<div class="col-md-12">
 														<label for="destination">Tour</label>
 														<select name="destination" id="destination" class="form-control">
+															<option selected> </option>
 															@forelse ($tour as $t)
 																<option value="{{$t->Tour_ID}}">{{$t->Tour_Com_Name}}</option>
 															@empty

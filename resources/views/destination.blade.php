@@ -101,7 +101,7 @@
 						</figure>
 						<div class="fh5co-text">
 							<h2>Encounter</h2>
-							<p style="font-size: 80.5%">This adventure is best for those who aren't comfortable swimming in the sea and the very young.</p>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
 							<p><span class="btn btn-primary">Schedule a Trip</span></p>
 						</div>
 					</a>

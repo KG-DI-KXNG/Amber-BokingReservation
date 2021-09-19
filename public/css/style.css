@@ -1935,3 +1935,7 @@ form label {
     color:white;
     background-color: red;
   }
+
+  .ajs-button:focus, .ajs-button:active{
+    border-radius: 10px;
+  }

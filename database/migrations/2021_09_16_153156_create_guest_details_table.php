@@ -14,7 +14,7 @@ class CreateGuestDetailsTable extends Migration
     public function up()
     {
         Schema::create('guest_details', function (Blueprint $table) {
-            $table->id('Guest_Details_ID');
+            $table->string('Guest_Details_ID',4)->primary();
             $table->string('First_name');
             $table->string('Last_name');
             $table->string('Hotel Name');

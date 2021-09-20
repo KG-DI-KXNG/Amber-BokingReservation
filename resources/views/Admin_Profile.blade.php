@@ -31,7 +31,7 @@
                             <th>Program</th>
                             <th>Hotel</th>
                             <th>Tour Company</th>
-                            <th> No of Adult(s)</th>
+                            <th>No of Adult(s)</th>
                             <th>No of Child(ren)</th>
                             <th>Reservation Date</th>
                             <th>Booking Date</th>

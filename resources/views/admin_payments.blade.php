@@ -82,14 +82,16 @@
             height: 300px;
             overflow-x: auto;
             margin-top: 0px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid #808080;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* rgba(255, 255, 255, 0.3); */
         }
 
         th {
             padding: 20px 15px;
             text-align: left;
-            font-weight: 500;
-            font-size: 12px;
+            font-weight: 700;
+            font-size: 13.5px;
             color: #fff;
             text-transform: uppercase;
         }
@@ -98,10 +100,11 @@
             padding: 15px;
             text-align: left;
             vertical-align: middle;
-            font-weight: 300;
+            font-weight: 800;
             font-size: 12px;
-            color: #fff;
-            border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+            color: black;
+            border-bottom: solid 1px gray;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
 

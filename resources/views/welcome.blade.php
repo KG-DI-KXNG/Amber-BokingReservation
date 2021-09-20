@@ -159,11 +159,11 @@
 														</div>
 														<div class="col-md-4">
 															<label for="adult">Adult</label>
-															<input type="number" id="adult"name="adult" value='1' min='1' class="form-control">
+															<input type="number" id="adult" name="adult" value='1' min='1' class="form-control">
 														</div>
 														<div class="col-md-4">
 															<label for="child">Children</label>
-															<input type="number" id="child"name='child'
+															<input type="number" id="child" name='child'
 															value='0' class="form-control">
 														</div>
 													
@@ -304,6 +304,9 @@
 			  <main class="mt-4 p-4">
 				<h1 class="text-xl font-semibold text-gray-700 text-center">Card payment</h1>
 				<div class="">
+					<div id="totalPrice">
+
+					</div>
 				  <div class="my-3">
 					<input
 					  type="text"

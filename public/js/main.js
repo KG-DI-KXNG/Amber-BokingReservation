@@ -299,6 +299,7 @@
         Alpine.data("creditCard", () => ({
           init() {
             console.log('Component mounted');
+			
           },
           format() {
             if (this.cardNumber.length > 18) {
@@ -307,9 +308,11 @@
             this.cardNumber = this.cardNumber.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
           },
           get isValid() {
+			
             if (this.cardholder.length < 5) {
               return false;
             }
+			cal_total();
             if (this.cardNumber === '') {
               return false;
             }
@@ -343,6 +346,44 @@
 			  alertify.alert('Whoops! Something went wrong..', error.innerHTML);
 		  }
 	  }
+
+	  let programs = [
+        { name: "DEM", price: 139, price1:139},
+        { name: "DSWM", price: 169, price1:139 },
+        { name: "DRSM", price: 199, price1:139 },
+        { name: "DSM", price: 149, price1:109 },
+        { name: "SE", price: 69, price1:69 },
+        { name: "E", price: 109, price1:109 },
+        { name: "AP", price: 69, price1:45 },
+        { name: "DPS", price: 189, price1:109 },
+        { name: "YASD", price: 149, price1:149 },
+    ];
+
+    let dropDown = document.getElementById("activities");
+	
+    function multiplyAdult(programName, adultAmt, childAmt) {
+        for (let i = 0; i < programs.length; i++) {
+            if (programName == programs[i].name) {
+				if (childAmt == 0){
+					childAmt = 1
+				}
+                let totalAdult = parseInt(programs[i].price) * parseInt(adultAmt);
+                let totalChild = parseInt(programs[i].price1) * parseInt(childAmt);
+				let result = totalAdult + totalChild;
+                return result;
+            }
+        }
+    }
+
+    function cal_total() {
+        let dropDownValue = dropDown.options[dropDown.selectedIndex].value;
+        let adultCount = document.getElementById("adult").value;
+        let childCount = document.getElementById("child").value;
+        let total = multiplyAdult(dropDownValue, adultCount, childCount);
+        console.log(total);
+		document.getElementById("totalPrice").textContent = adultCount+" Adult"+childCount+" Children.   Your total is"+total;
+
+    };
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -358,6 +399,7 @@
 		dateForm();
 		parallax();
 		alert_error();
+		cal_total();
 	});
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use App\Models\Reservation;
 use App\Models\GuestDetail;
+use App\Models\payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -73,6 +74,27 @@ class AdminDashboard extends Controller
             ->where('Booking_Date', now()->toDateString())
             ->count();
 
+
+            $guest_count = Guest::where('FirstName', $request->first_name)->where('LastName',$request->last_name)->count();
+            $guest_unique_id = "AB1";
+            $i = 1;
+            
+    
+            if ($guest_count == 0){
+                while (Guest::where('Guest_ID',$guest_unique_id)->count() == 1){
+                    $guest_unique_id = "AB".$i++;
+                }
+    
+                $g = new Guest();
+                $g->Guest_ID = $guest_unique_id;
+                $g->FirstName = $request->first_name;
+                $g->LastName = $request->last_name;
+                $g->DOB = $dob;
+                $g->save();
+    
+                
+            }
+
             // dd($guest_check);
         if ($guest_check != 0){
             if ($request->child != 0){
@@ -100,6 +122,7 @@ class AdminDashboard extends Controller
         }else{
             
         $guest = new GuestDetail();
+        $guest->Guest_Details_ID = $guest_unique_id;
         $guest->First_name = $request->first_name;
         $guest->Last_name = $request->last_name;
         $guest->N_Adults = $request->adult;
@@ -115,25 +138,7 @@ class AdminDashboard extends Controller
         $guest->save();
         }
 
-        $guest_count = Guest::where('FirstName', $request->first_name)->where('LastName',$request->last_name)->count();
-        $guest_unique_id = "AB1";
-        $i = 1;
         
-
-        if ($guest_count == 0){
-            while (Guest::where('Guest_ID',$guest_unique_id)->count() == 1){
-                $guest_unique_id = "AB".$i++;
-            }
-
-            $g = new Guest();
-            $g->Guest_ID = $guest_unique_id;
-            $g->FirstName = $request->first_name;
-            $g->LastName = $request->last_name;
-            $g->DOB = $dob;
-            $g->save();
-
-            
-        }
 
         $reservation_id = "RES#1";
         $ref_num = "REF#1";
@@ -154,6 +159,12 @@ class AdminDashboard extends Controller
                 $reserve->save();
             
         }
+        $reservation_primary_id = Reservation::where('Confirmation_Code',$reservation_id)->value('Reservation_ID');
+        $payment_info = new payment();
+        $payment_info->Payment_Type = "Card";
+        $payment_info->Reservation_ID = $reservation_primary_id;
+        $payment_info->save();
+
 
         return redirect('/')->withSuccess('Successfully Booked! Enjoy your trip '.$request->first_name.' '.$request->last_name);
         }

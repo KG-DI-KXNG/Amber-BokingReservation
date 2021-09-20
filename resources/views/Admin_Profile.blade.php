@@ -48,6 +48,7 @@
                             <td>{{$g->First_name}} </td>
                             <td>{{$g->Last_name}}</td>
                             <td>{{$g->Program_Name}}</td>
+                            <td>{{ $g->{"Hotel Name"} }}</td>
                             <td>{{ $g->{"Tour Company"} }}</td>
                             <td>{{$g->N_Adults}}</td>
                             <td>{{$g->N_Child}}</td>

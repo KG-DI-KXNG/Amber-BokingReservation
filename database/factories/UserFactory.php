@@ -22,13 +22,13 @@ class UserFactory extends Factory
      * @return array
      */
     private $counter = 1;
-    
+
     public function definition()
     {
         
         return [
 
-            'Guest_Details_ID' => 'AB'.$this->counter++,
+            'Guest_Details_ID' => 'AA'.$this->counter++,
             'First_name' => $this->faker->name(),
             'Last_name' => $this->faker->name(),
             'Hotel Name' => $this->faker->randomElement(['Gran Bahia Principe Jamaica Hotel', 'Grand Lido Braco Hotel','Starfish Trelawny Beach Resort','FDR Pebbles Hotel','Coral Seas Cliff Resort','Couples Swept Away Hotel','Hedonism III Resort','Breezes Hotel']),

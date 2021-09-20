@@ -146,16 +146,16 @@
 												<div class="row form-group">
 													<div class="col-md-6">
 														<label for="fullname">First Name</label>
-														<input type="text" id="first_name" name='first_name' class="form-control">
+														<input type="text" id="first_name" name='first_name' class="form-control" value="{{ old('fullname') }}">
 													</div>
 													<div class="col-md-6">
-														<label for="fullname">Last Name</label>
-														<input type="text" id="last_name" name='last_name' class="form-control">
+														<label for="last_name">Last Name</label>
+														<input type="text" id="last_name" name='last_name' class="form-control" value="{{ old('last_name') }}">
 													</div>
 													
 														<div class="col-md-4">
 															<label for="dob">Date of Birth</label>
-															<input type="text" id="dob" name='dob' class="form-control">
+															<input type="text" id="dob" name='dob' class="form-control" value="{{ old('dob') }}">
 														</div>
 														<div class="col-md-4">
 															<label for="adult">Adult</label>

@@ -12,15 +12,15 @@
                             <li class="has-dropdown">
                                 <a href="#">Programme</a>
                                 <ul class="dropdown">
-                                    <li><a href="/destination/dem">Dolphin Encounter Memories</a></li>
-                                    <li><a href="/destination/dsam">Dolphin Swim Adventure Memories</a></li>
-                                    <li><a href="/destination/drsm">Dolphin Royal Swim Memories</a></li>
-                                    <li><a href="/destination/dsa">Dolphin Swim Adventure</a></li>
-                                    <li><a href="/destination/se">Shark Encounter</a></li>
-                                    <li><a href="/destination/e">Encounter</a></li>
-                                    <li><a href="/destination/ap">Admission Plus</a></li>
-                                    <li><a href="/destination/drs">Dolphin Royal Swim</a></li>
-                                    <li><a href="/destination/yasd">Yaaman Adventures + Swim with Dolphins</a></li>
+                                    <li>Dolphin Encounter Memories</li>
+                                    <li>Dolphin Swim Adventure Memories</li>
+                                    <li>Dolphin Royal Swim Memories</li>
+                                    <li>Dolphin Swim Adventure</li>
+                                    <li>Shark Encounter</li>
+                                    <li>Encounter</li>
+                                    <li>Admission Plus</li>
+                                    <li>Dolphin Royal Swim</li>
+                                    <li>Yaaman Adventures + Swim with Dolphins</li>
                                 </ul>
                             </li>
                             <li class="active"><a href="/pricing">Pricing</a></li>

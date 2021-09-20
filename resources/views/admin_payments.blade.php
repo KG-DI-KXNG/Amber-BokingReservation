@@ -173,7 +173,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{{ url('dashboard') }}">Reservations</a>
         <a href="{{ url('admin-pay') }}">Payments</a>
-        <a href="#">Logout</a>
+        <a href="/logout">Logout</a>
     </div>
 
     <div id="main">
@@ -200,6 +200,7 @@
             <div class="tbl-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tbody>
+                        {{-- @foreach ($payment as $list) --}}
                         <tr>
                             <td>AAC</td>
                             <td>AUSTRALIAN COMPANY </td>
@@ -210,6 +211,7 @@
                             <td>xxxxx</td>
                             <td>xxxxx</td>
                         </tr>
+                        {{-- @endforeach --}}
                     </tbody>
                 </table>
             </div>

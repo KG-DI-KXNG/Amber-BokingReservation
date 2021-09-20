@@ -21,7 +21,7 @@ class AdminDashboard extends Controller
         if (session()->has('admin')){
             return $this->create();
         }
-        return \redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
+        return \redirect("/login")->withErrors(['email' => 'The provided credentials do not match our records.']);
         
     }
 
@@ -164,8 +164,7 @@ class AdminDashboard extends Controller
         $payment_info->Payment_Type = "Card";
         $payment_info->Reservation_ID = $reservation_primary_id;
         $payment_info->save();
-
-
+        
         return redirect('/')->withSuccess('Successfully Booked! Enjoy your trip '.$request->first_name.' '.$request->last_name);
         }
     
@@ -178,7 +177,11 @@ class AdminDashboard extends Controller
      */
     public function show($id)
     {
-        //
+        // $payment = DB::table('reservations')
+        //     ->join('guest_details',"reservations.Guest_Details_ID",'=',"guest_details.Guest_Details_ID")
+        //     ->get();
+        // dd($payment);
+        return view('admin_payments',['payment'=>$name=[1]]);
     }
 
     /**

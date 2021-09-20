@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Welcome::class, 'index']);
 
 Route::get('login', [LoginController::class, 'login']);
+Route::get('logout', [LoginController::class, 'logout']);
 Route::post('login', [LoginController::class, 'post_login']);
+
 
 Route::view('contact', 'contact');
 Route::view('pricing', 'pricing');
@@ -28,5 +30,6 @@ Route::view('destination/{program}', 'destination');
 Route::view('Admin', 'AdminPortal');
 Route::view('admin-pay', 'admin_payments');
 Route::view('admindash', 'admindash');
+
 
 Route::resource('dashboard', AdminDashboard::class);

@@ -12,8 +12,8 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{{ url('dashboard') }}">Reservations</a>
-        <a href="{{ url('admin-pay') }}">Payments</a>
-        <a href="#">Logout</a>
+        <a href="{{ url('dashboard/show') }}">Payments</a>
+        <a href="/logout">Logout</a>
     </div>
 
     <div id="main">

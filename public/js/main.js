@@ -381,7 +381,7 @@
         let childCount = document.getElementById("child").value;
         let total = multiplyAdult(dropDownValue, adultCount, childCount);
         console.log(total);
-		document.getElementById("totalPrice").textContent = adultCount+" Adult"+childCount+" Children.   Your total is"+total;
+		document.getElementById("totalPrice").textContent = adultCount+" Adult"+childCount+" Children.   Your total is $"+total+".00 USD";
 
     };
 	
